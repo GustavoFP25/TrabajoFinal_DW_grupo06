@@ -1,0 +1,57 @@
+<div style="background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('/assets/img/cole.webp') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;">
+
+  <!-- CABECERA -->
+  <header class="text-end p-2 bg-light">
+    <small>
+      ¿Problemas para ingresar? 
+      <a href="correo:soporte@smiledu.edu.pe">Contáctenos</a>
+    </small>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="flex-grow-1 d-flex align-items-center justify-content-center">
+    <div class="card shadow p-4" 
+         style="max-width: 420px; width:100%; background-color: rgb(255, 255, 255);">
+      
+      <!-- LOGO -->
+      <div class="text-center mb-3">
+        <img src="/assets/img/img.png" alt="Logo Colegio" style="width:120px;">
+      </div>
+
+      <!-- FORMULARIO -->
+      <h4 class="text-center mb-3">Iniciar Sesión</h4>
+
+      <form (ngSubmit)="onLogin()">
+        <div class="mb-3">
+          <label class="form-label">Código de Usuario</label>
+          <input type="text" class="form-control" [(ngModel)]="userCode" name="userCode" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Contraseña</label>
+          <input type="password" class="form-control" [(ngModel)]="password" name="password" required>
+        </div>
+
+        <div *ngIf="error" class="alert alert-danger py-2">{{ error }}</div>
+
+        <button type="submit" class="btn w-100" 
+        style="background-color: hwb(219 1% 38%); color: white; border: none; border-radius: 8px;">Entrar</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="text-center p-3 bg-light">
+    <small>Disponible en iOS y Android</small>
+    <div class="mt-2">
+      <img src="/assets/img/ios.png" alt="App Store" style="height:35px; margin-right:10px;">
+      <img src="/assets/img/android.jpg" alt="Google Play" style="height:35px; max-width:120px; object-fit:contain;">
+    </div>
+  </footer>
+
+</div>

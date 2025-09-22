@@ -1,0 +1,22 @@
+body { background:#f8f9fa; margin:0; padding-bottom:60px; }
+
+/* MEDIOS DE PAGO */
+.medio-pago-img {
+  height: 40px;
+  cursor: pointer;      
+  transition: transform 0.2s;
+}
+
+.medio-pago-img:hover {
+  transform: scale(1.05); 
+}
+
+.medio-pago-img:hover { transform: scale(1.05); }
+
+/* TARJETA CENTRAL */
+.card { background:white; }
+.form-label.small { font-size:0.8rem; }
+.btn { border-radius:0.5rem; font-weight:500; }
+
+/* NAV INFERIOR */
+.bottom-nav a { color:hwb(219 1% 38%); }

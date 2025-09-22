@@ -1,0 +1,143 @@
+:root {
+  --primary-color: #3a3a3a;
+  --accent-color: #ffffff;
+  --bg-color: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-color: #333;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(90deg, hwb(219 1% 38%), #f7f4f4);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.header img.logo {
+  width: 40px;
+  height: 40px;
+}
+.iconos-superiores i {
+  color: hwb(219 1% 38%);
+  font-size: 1.3rem;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.iconos-superiores i:hover {
+  color: var(--accent-color);
+  transform: scale(1.2);
+}
+
+.dropdown-item:hover {
+  background-color: #f3e594; 
+  color: #000; 
+  cursor: pointer;
+
+  }
+
+/* CARDS */
+.nota-card, .menu-item {
+  display: inline-block;
+  background: linear-gradient(145deg, #fff, #f1f1f1);
+  padding: 1rem;
+  margin-right: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  min-width: px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.nota-card:hover, .menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* TAREAS */
+.tareas {
+  margin-top: 2rem;
+  max-height: 200x;
+  overflow-y: auto;
+}
+.tareas::-webkit-scrollbar {
+  width: 6px;
+}
+.tareas::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+.task {
+  background: #fff;
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.task:hover {
+  background-color: #f0f8ff;
+  transform: translateX(3px);
+}
+.task.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+
+.nav-item {
+  color: #666;
+  text-align: center;
+  font-size: 1.6rem;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+.nav-item.active {
+  color: var(--accent-color);
+}
+.nav-item.active::after {
+  content: '';
+  width: 30%;
+  height: 3px;
+  background-color: var(--primary-color);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+}
+.nav-item:hover {
+  transform: scale(1.1);
+}
+
+#btnEnviarCert {
+  background-color: hwb(219 1% 38%); 
+  color: white;    
+  border: none;             
+  border-radius: 8px;        
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+
+  }
+
+  /* Cambio de Color del acordeon  */
+  
+  .acordeon-verde {
+  background-color: #59a057 !important; 
+  color: white !important;               
+}
+
+ 

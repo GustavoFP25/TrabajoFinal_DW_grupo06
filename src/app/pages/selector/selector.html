@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <h4 class="text-center mb-4 fw-bold">Selecciona un alumno</h4>
+
+  <div class="row justify-content-center">
+    <div *ngFor="let student of students" class="col-md-4 col-sm-6 mb-4">
+      <div class="card shadow-sm border-0 alumno-card text-center p-3">
+        <img [src]="student.img" [alt]="student.name" class="rounded-circle alumno-img mb-3" style="width:80px; height:80px; object-fit:cover; margin: auto;">
+        
+        <div class="form-check d-flex justify-content-center align-items-center">
+          <input 
+            type="radio" 
+            class="form-check-input me-2" 
+            name="alumno" 
+            [value]="student.name" 
+            [(ngModel)]="selectedStudent">
+          <label class="form-check-label fw-semibold">
+            {{ student.name }}
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="text-center mt-3 d-flex justify-content-center gap-4">
+  <button class="btn px-4"  style="background-color: hwb(219 1% 38%); color: white; border: none; border-radius: 8px;"  (click)="ingresar()">Acceder</button>
+  <button class="btn px-4"  style="background-color: hwb(219 1% 38%); color: white; border: none; border-radius: 8px;"  (click)="cerrarSesion()">Cerrar sesión</button>
+
+</div>
+
+
+<!-- Navbar inferior -->
+<div class="navbar-bottom text-center py-3"></div>
+  

@@ -1,0 +1,38 @@
+<div class="text-center my-3 px-3 text-dark">
+  <h4>Mi Agenda</h4>
+</div>
+
+<div class="calendar">
+  <div class="calendar-header">
+    <button (click)="prevMonth()" class="btn btn-sm btn-outline-secondary">&lt;</button>
+    <div>
+      <span>{{ monthNames[currentMonth] }} {{ currentYear }}</span>
+      <select [(ngModel)]="currentYear" (change)="changeYear(currentYear)">
+        <option *ngFor="let y of years" [value]="y">{{ y }}</option>
+      </select>
+    </div>
+    <button (click)="nextMonth()" class="btn btn-sm btn-outline-secondary">&gt;</button>
+  </div>
+
+  <div class="day-names">
+    <div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div><div>Dom</div>
+  </div>
+
+  <div class="calendar-grid">
+    <div *ngFor="let d of calendarDays" 
+         class="calendar-day" 
+         [class.bold]="d.hasEvent"
+         (click)="d.fullDate && mostrarEvento(d.fullDate)">
+      {{ d.day }}
+    </div>
+  </div>
+</div>
+
+<div class="event-box" *ngIf="activeDay">
+  <p>
+    <strong>{{ activeDay }}</strong><br>
+    {{ eventos[activeDay] || 'No se registran actividades ese día.' }}
+  </p>
+</div>
+
+

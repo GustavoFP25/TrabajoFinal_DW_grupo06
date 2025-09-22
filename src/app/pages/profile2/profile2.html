@@ -1,0 +1,95 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- LATERAL IZQUIERDO -->
+    <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar position-fixed vh-100 p-3">
+      <div class="text-center mb-4">
+        <img src="assets/img/alumna.png" class="logo mb-2" style="width:60px; height:60px; border-radius:50%;">
+        <div>Hola, <strong>Carla Sofía, Hernandez Cortez</strong></div>
+      </div>
+      <h6 class="mt-4">Menú Principal</h6>
+      <div class="row text-center">
+        <div class="d-flex flex-column mb-3"><div class="menu-item"><i class="bi bi-journal-text" (click)="irACursos()"></i><div>Cursos</div></div></div>
+        <div class="d-flex flex-column mb-3"><div class="menu-item"><i class="bi bi-file-earmark-text" (click)="irATramites()"></i><div>Trámites</div></div></div>
+        <div class="d-flex flex-column mb-3"><div class="menu-item"><i class="bi bi-calendar-check"></i><div>Agenda</div></div></div>
+        <div class="d-flex flex-column mb-3"><div class="menu-item"><i class="bi bi-credit-card" (click)="irAPagos()"></i><div>Pagos</div></div></div>
+      </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="col-md-9 offset-md-3 col-lg-10 offset-lg-2 ms-sm-auto p-4">
+      
+      <!-- HEADER -->
+      <div class="header d-flex justify-content-between align-items-center mb-4" >
+        <div class="d-flex align-items-center">
+          <img src="assets/img/img.png" class="logo me-2" style="width:40px; height:40px;">
+                    <span><strong><em>Colegio Maria Medalla Milagrosa</em></strong></span>
+        </div>
+        <div class="iconos-superiores">
+          <i class="bi bi-envelope-fill" (click)="irAMensajes()"></i>
+          <i class="bi bi-bell-fill"></i>
+
+          
+          <a routerLink="/selector" class="nav-item" routerLinkActive="active">
+          <i class="bi bi-person-fill"></i>
+          </a>
+           <a routerLink="/login" class="nav-item" routerLinkActive="active">
+          <i class="bi bi-house-fill"></i>
+          </a>
+        </div>
+        </div>
+        
+      <div class="row">
+        <!-- NOTAS -->
+        <div class="col-lg-6 mb-4">
+          <h6>Notas</h6>
+          <div class="notas-scroll mb-3 d-flex flex-wrap" style="overflow-x:auto; white-space: nowrap;">
+            <div class="nota-card m-2">
+              <h6>Matemáticas</h6>
+              <p>Promedio: 19</p>
+              <small>1° Bim: 18<br>2° Bim: 20<br>3° Bim: 19<br>4° Bim: 19</small>
+            </div>
+            <div class="nota-card m-2">
+              <h6>Lenguaje</h6>
+              <p>Promedio: 17</p>
+              <small>1° Bim: 16<br>2° Bim: 18<br>3° Bim: 17<br>4° Bim: 17</small>
+            </div>
+            <div class="nota-card m-2">
+              <h6>Historia</h6>
+              <p>Promedio: 20</p>
+              <small>1° Bim: 20<br>2° Bim: 20<br>3° Bim: 20<br>4° Bim: 20</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAREAS -->
+        <div class="col-lg-6 mb-4">
+        
+          <h6>Mis Tareas</h6>
+          <div class="tareas" style="max-height:400px; overflow-y:auto;">
+            <div class="task mb-2" id="historia" data-texto="Historia: Estudiar Independencia 11/07"
+                 onclick="abrirTarea('Historia','Estudiar Independencia','11/07/25','Realizar esquema y resumen','Profa. Ana Martínez')">
+              Historia: Estudiar Independencia <span>11/07/25</span>
+            </div>
+            <div class="task mb-2" id="matematicas" data-texto="Matemáticas: Práctica de fracciones 13/07"
+                 onclick="abrirTarea('Matemáticas','Práctica de fracciones','13/07/25','Resolver ejercicios de fracciones equivalentes','Prof. Carlos Ruiz')">
+              Matemáticas: Práctica de fracciones <span>13/07/25</span>
+            </div>
+            <div class="task mb-2" id="lenguaje" data-texto="Lenguaje: Leer El Caballero Carmelo 15/07"
+                 onclick="abrirTarea('Lenguaje','Leer El Caballero Carmelo','15/07/25','Lectura completa y responder preguntas','Profa. María León')">
+              Lenguaje: Leer El Caballero Carmelo <span>15/07/25</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+</div>
+
+
+
+
+
+

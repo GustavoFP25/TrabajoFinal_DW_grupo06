@@ -1,0 +1,74 @@
+ body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+   
+      
+.header-cursos {
+  background: linear-gradient(90deg, hwb(219 1% 38%), #f7f4f4);
+  border-radius: 5px;   
+  font-weight: bold;
+  display: inline-block;
+  min-width: 0;       
+  text-align: center;    
+  padding: 0.25rem 0.75rem;  
+}
+
+.header-cursos h5 {
+  margin: 0;
+}
+
+.header-cursos input {
+  max-width: 300px; 
+}
+      
+     
+
+    
+        .search-box {
+        max-width: 500px;
+        margin: 1rem auto;
+        }
+        .curso-card {
+        background-color: #fff;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 8px rgba(4, 64, 194, 0.1);
+        padding: 1rem;
+        margin-bottom: 1rem;
+        transition: transform 0.2s;
+        }
+        .curso-card:hover {
+        transform: translateY(-3px);
+        }
+        .nombre-curso {
+        font-weight: 600;
+        font-size: 1.25rem;
+        }
+        .nombre-profesor {
+        color: #6c757d;
+        }
+        .toggle-detalles {
+        transition: background-color 0.2s;
+        }
+        .toggle-detalles:hover {
+        background-color:  hwb(219 1% 38%);
+        color: #fff;
+        border-color:  hwb(219 1% 38%);
+        }
+        .detalles-curso {
+        margin-top: 1rem;
+        border-top: 1px solid #dee2e6;
+        padding-top: 1rem;
+        }
+        .accordion-button {
+        background-color: #f1f3f5;
+        color: #495057;
+        font-weight: 500;
+        }
+        .accordion-button:not(.collapsed) {
+        background-color:  hwb(219 1% 38%);
+        color: #fff;
+        }
+        .accordion-body {
+        background-color: #e9ecef;
+        }

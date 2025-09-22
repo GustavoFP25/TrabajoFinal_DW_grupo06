@@ -1,0 +1,15 @@
+<div class="consultas-container">
+  <h2>Consultas rápidas</h2>
+  
+  <input 
+    type="text" 
+    [(ngModel)]="comando" 
+    (keyup.enter)="ejecutarComando()" 
+    placeholder="Escribe tu consulta..."
+    class="input-comando"
+  />
+
+  <div class="resultado">
+    <p *ngFor="let linea of historial">{{ linea }}</p>
+  </div>
+</div>

@@ -1,0 +1,126 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- LATERAL IZQUIERDO -->
+    <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar position-fixed vh-100 p-3">
+      <div class="text-center mb-4">
+        <img src="assets/img/alumno.png" class="logo mb-2" style="width:60px; height:60px; border-radius:50%;">
+        <div>Hola, <strong>Juan David, Hernandez Cortez</strong></div>
+      </div>
+      <h6 class="mt-4">Menú Principal</h6>
+      <div class="row text-center">
+        <div class="d-flex flex-column mb-3"><div class="menu-item"><i class="bi bi-journal-text" (click)="irACursos()"></i><div>Cursos</div></div></div>
+        <div class="d-flex flex-column mb-3"><div class="menu-item"><i class="bi bi-file-earmark-text" (click)="irATramites()"></i><div>Trámites</div></div></div>
+        <div class="d-flex flex-column mb-3"><div class="menu-item"><i class="bi bi-calendar-check"(click)="irAAgenda()"></i><div>Agenda</div></div></div>
+        <div class="d-flex flex-column mb-3"><div class="menu-item"><i class="bi bi-credit-card" (click)="irAPagos()"></i><div>Pagos</div></div></div>
+      </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="col-md-9 offset-md-3 col-lg-10 offset-lg-2 ms-sm-auto p-4">
+      
+     <div class="header d-flex justify-content-between align-items-center mb-4">
+  <div class="d-flex align-items-center">
+    <img src="assets/img/img.png" class="logo me-2" style="width:40px; height:40px;">
+    <span><strong><em>Colegio Maria Medalla Milagrosa</em></strong></span>
+  </div>
+
+  <div class="iconos-superiores d-flex align-items-center gap-2">
+    <i class="bi bi-house-fill" (click)="irAInicio()"></i>
+    <i class="bi bi-person-fill" (click)="irASeleccion()"></i>
+    <i class="bi bi-envelope-fill" (click)="irAMensajes()"></i>
+
+    <!-- Campana con dropdown -->
+    <div class="dropdown">
+      <i class="bi bi-bell-fill" 
+         id="dropdownNotificaciones" 
+         data-bs-toggle="dropdown" 
+         aria-expanded="false" 
+         style="cursor:pointer; font-size:1.4rem;">
+      </i>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownNotificaciones" style="min-width:350px;">
+       <li class="dropdown-header fw-bold fs-5">Notificaciones</li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Se agregó Tarea</a></li>
+        <li><a class="dropdown-item" href="#">Nuevo mensaje</a></li>
+        <li><a class="dropdown-item" href="#">Actividad en el Calen...</a></li>
+        <li><a class="dropdown-item" href="#">Se agregó Tarea</a></li>
+        <li><hr class="dropdown-divider"></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+        <!-- Notas -->
+
+        <div class="col-lg-6 mb-4">
+          <h6>Notas</h6>
+          <div class="notas-scroll mb-3 d-flex flex-wrap" style="overflow-x:auto; white-space: nowrap;">
+            <div class="nota-card m-2">
+              <h6>Matemáticas</h6>
+              <p>Promedio: 19</p>
+              <small>1° Bim: 18<br>2° Bim: 20<br>3° Bim: 19<br>4° Bim: 19</small>
+            </div>
+            <div class="nota-card m-2">
+              <h6>Lenguaje</h6>
+              <p>Promedio: 17</p>
+              <small>1° Bim: 16<br>2° Bim: 18<br>3° Bim: 17<br>4° Bim: 17</small>
+            </div>
+            <div class="nota-card m-2">
+              <h6>Historia</h6>
+              <p>Promedio: 20</p>
+              <small>1° Bim: 20<br>2° Bim: 20<br>3° Bim: 20<br>4° Bim: 20</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mis Tareas -->
+
+        <div class="col-lg-6 mb-4">
+  <h6>Mis Tareas</h6>
+  <div class="accordion" id="accordionTramites">
+  <div class="accordion-item" *ngFor="let tarea of tareas">
+    <h2 class="accordion-header">
+      <button 
+        class="accordion-button collapsed"
+        type="button"
+        [ngClass]="{'acordeon-verde': tarea.completada}" 
+        data-bs-toggle="collapse"
+        [attr.data-bs-target]="'#collapse' + tarea.id"
+      >
+        {{tarea.nombre}}
+      </button>
+    </h2>
+    <div [id]="'collapse' + tarea.id" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        <textarea class="form-control mb-2" rows="4" readonly>{{tarea.descripcion}}</textarea>
+        <div class="d-flex gap-2">
+          <button 
+            class="btn w-50"
+            [ngClass]="tarea.completada ? 'btn-verde' : 'btn-outline-secondary'"
+            (click)="marcarComoHecho(tarea)"
+          >
+            Hecho
+          </button>
+          <button 
+            class="btn w-50"
+            [ngClass]="!tarea.completada ? 'btn-outline-secondary' : 'btn-secondary'"
+            (click)="marcarComoPendiente(tarea)"
+          >
+            Pendiente
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+<body>
+        
+<div class="text-center my-3 px-3 text-dark">
+  <h4>Enviar correo</h4>
+</div>
+
+<!-- Contenido del formulario -->
+<div class="form-container">
+  <form (ngSubmit)="enviarMensaje()" #formMensaje="ngForm">
+    <div class="mb-3">
+      <label class="form-label">Para:</label>
+      <input type="text" class="form-control" [(ngModel)]="profesor" name="Para" required>
+    
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Curso:</label>
+      <input type="text" class="form-control" [(ngModel)]="curso" name="asunto" required>
+    
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Asunto:</label>
+      <input type="text" class="form-control" [(ngModel)]="asunto" name="asunto" placeholder="Ingrese el asunto..." required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Mensaje:</label>
+      <textarea class="form-control" [(ngModel)]="contenido" name="contenido" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-custom w-100">Enviar</button>
+  </form>
+</div>
+
+<!-- Mensaje enviado (opcional si decides mostrarlo) -->
+<div *ngIf="mensajeEnviado" id="mensajeEnviado">Mensaje enviado</div>
+
+
+

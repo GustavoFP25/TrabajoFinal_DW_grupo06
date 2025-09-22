@@ -1,0 +1,11 @@
+/* Ajustes mínimos porque usamos bootstrap */
+.border {
+  cursor: pointer;
+  user-select: none;
+}
+.bg-success {
+  background-color: #198754 !important;
+}
+.bg-warning {
+  background-color: #fff3cd !important;
+}

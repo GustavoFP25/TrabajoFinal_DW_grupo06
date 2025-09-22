@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Trámites</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  </head>
+
+<body>
+    
+<div class="text-center my-3 px-3 text-dark">
+  <h4>Gestión de Trámites Académicos</h4>
+</div>
+    
+   <div id="tramites-academicos">
+    <div class="accordion" id="accordionTramites">
+      
+      <!-- CERTIFICADOS -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCertificados">
+            Solicitud de Certificados
+          </button>
+        </h2>
+        <div id="collapseCertificados" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <input class="form-control mb-2 cert" type="text" placeholder="Nombre del alumno">
+            <input class="form-control mb-2 cert" type="text" placeholder="Edad">
+            <input class="form-control mb-3 cert" type="text" placeholder="DNI">
+            <div class="form-check"><input class="form-check-input chk-cert" type="checkbox" id="cert1"><label class="form-check-label" for="cert1">Certificado de Estudios</label></div>
+            <div class="form-check"><input class="form-check-input chk-cert" type="checkbox" id="cert2"><label class="form-check-label" for="cert2">Certificado de Conducta</label></div>
+            <div class="form-check"><input class="form-check-input chk-cert" type="checkbox" id="cert3"><label class="form-check-label" for="cert3">Constancia de Matrícula</label></div>
+            <div class="form-check"><input class="form-check-input chk-cert" type="checkbox" id="cert4"><label class="form-check-label" for="cert4">Constancia de Notas</label></div>
+            <div class="form-check"><input class="form-check-input chk-cert" type="checkbox" id="cert5"><label class="form-check-label" for="cert5">Certificado de Buena Salud</label></div>
+            <div class="form-check mb-3"><input class="form-check-input chk-cert" type="checkbox" id="cert6"><label class="form-check-label" for="cert6">Otros</label></div>
+            <p class="text-muted"><strong>Nota:</strong> Escoja la casilla correspondiente y se le enviará un mensaje a través del aplicativo.</p>
+            <button id="btnEnviarCert" class="btn btn-dark w-100" disabled onclick="enviar('collapseCertificados', 'cert')">Enviar Solicitud</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PERMISOS -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePermisos">
+            Solicitud de Permisos
+          </button>
+        </h2>
+        <div id="collapsePermisos" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <input class="form-control mb-2 permiso" type="text" placeholder="Nombre del alumno">
+            <input class="form-control mb-2 permiso" type="date">
+            <textarea class="form-control mb-3 permiso" placeholder="Motivo del permiso"></textarea>
+            <p class="text-muted"><strong>Nota:</strong> Será evaluado y respondido por notificaciones.</p>
+            <button class="btn btn-dark w-100" disabled id="btnEnviarPermiso" onclick="enviar('collapsePermisos', 'permiso')">Enviar Solicitud</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- INASISTENCIAS -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInasistencias">
+            Justificación de Inasistencias
+          </button>
+        </h2>
+        <div id="collapseInasistencias" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <input class="form-control mb-2 inasistencia" type="text" placeholder="Nombre del alumno">
+            <input class="form-control mb-2 inasistencia" type="date">
+            <textarea class="form-control mb-3 inasistencia" placeholder="Detalle del motivo"></textarea>
+            <p class="text-muted"><strong>Nota:</strong> Adjunte constancia médica o documento de respaldo.</p>
+            <button class="btn btn-dark w-100" disabled id="btnEnviarInasistencia" onclick="enviar('collapseInasistencias', 'inasistencia')">Enviar Solicitud</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TALLERES -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTalleres">
+            Inscripción a Talleres
+          </button>
+        </h2>
+        <div id="collapseTalleres" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <input class="form-control mb-2 taller" type="text" placeholder="Nombre del alumno">
+            <select class="form-select mb-3 taller">
+              <option selected disabled>Seleccione un taller</option>
+              <option>Fútbol</option>
+              <option>Teatro</option>
+              <option>Danza</option>
+              <option>Robótica</option>
+            </select>
+            <p class="text-muted"><strong>Nota:</strong> La inscripción se confirmará si hay cupo.</p>
+            <button class="btn btn-dark w-100" disabled id="btnEnviarTaller" onclick="enviar('collapseTalleres', 'taller')">Enviar Solicitud</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
